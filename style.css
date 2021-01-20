@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: auto;
+  background-color: aquamarine;
+  padding: 20px;
+  font-family: cursive;
+}
+
+.ville-select{
+  display: none;
+  background-color: red;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.label{
+  font-family: fantasy;
+  margin-right: 35px;
+}
+
+#name,#password{
+  width: 100%;
+  border: none;
+  border-radius: .5rem;
+  padding: 10px 0;
+  outline: none;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#connecter,#annuler{
+  padding: 5px;
+  border-radius: .5rem;
+}
+
+hr{
+  width: 90%;
+  margin: 10px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>ATELIER VALIDATION FORMULAIRE</title>
+</head>
+<body>
+
+  <div class="container">
+  
+    <form method="POST">
+
+      <label class="label">Nom</label> <br>
+      <input type="text" id="name" placeholder="nom ici.." required> 
+      <br>
+      <label class="label">Password</label> <br>
+      <input type="password" id="password" placeholder="password" required>
+  
+      <hr>
+  
+      <label class="label"> Afficher Le Div </label> 
+      <input onchange="show()" type="radio" name="show_hide">Oui
+      <input onchange="hide()" type="radio" name="show_hide">Non
+  
+      <hr>
+  
+      <div class="ville-select" >
+        <label class="label">choisir une ville </label>
+        <select id="ville-liste">
+          <option active>Selectionner ville</option>
+          <option>Morocco</option>
+          <option>Algeria</option>
+          <option>Egypt</option>
+          <option>Tunisia</option>
+          <option>Libya</option>
+        </select>
+      </div>
+  
+      <input type="submit" id="connecter" value="Se connecter">
+      <input type="reset" id="annuler" value="annuler">
+  
+    </form>
+
+  </div>
+ 
+  <script src="app.js"></script>
+</body>
+</html>
