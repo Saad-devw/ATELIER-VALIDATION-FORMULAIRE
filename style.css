@@ -46,3 +46,11 @@ hr{
   width: 90%;
   margin: 10px;
 }
+
+.alert{
+  text-align: center;
+  font-family: fantasy;
+  letter-spacing: 1px;
+  background-color: lightskyblue;
+  
+}

@@ -2,6 +2,7 @@ const selectDiv = document.querySelector('.ville-select'),
       showRadio = document.querySelector('.show'),
       hideRadio = document.querySelector('.hide'),
       NomInp = document.querySelector('#name'),
+      PassInp = document.querySelector('#password'),
       submit = document.querySelector('#connecter'),
       annuler = document.querySelector('#annuler'),
       select = document.querySelector('#ville-liste');
@@ -22,19 +23,47 @@ function hide(){
 submit.addEventListener('click', (e) => {
   e.preventDefault();
 
+  const index = select.selectedIndex;
   let reg = /^[a-zA-Z]+(\' \')?$/;
 
-      if ( !reg.test(NomInp.value)){
-        alert('Nom Format non Valide');
-      }
+  //------------------- verifier si il existe une erreur ------------------------//
+  if ( !reg.test(NomInp.value) || PassInp.value === '' || divIsHidden == false && select[index].text === 'Selectionner ville' )
+  {
+    //---------------- verifier qu'il type d'erreur existe-il----------------------------//
+    if ( !reg.test(NomInp.value)){
+      
+      showAlert('Validation échoué!');
+      setTimeout( () => {
+        document.querySelector('.alert').innerHTML = '';
+      },2000);
 
-    const index = select.selectedIndex;
-
-    if( divIsHidden == false && select[index].text === 'Selectionner ville'){
-      alert('choisie une ville ');
     }
     
+    if (PassInp.value === ''){
+      showAlert('Validation échoué!');
+      setTimeout( () => {
+        document.querySelector('.alert').innerHTML = '';
+      },2000);
+    }
 
+    if( divIsHidden == false && select[index].text === 'Selectionner ville'){
+
+    showAlert('Validation échoué!');
+    setTimeout( () => {
+      document.querySelector('.alert').innerHTML = '';
+    },2000);
+
+    }
+  } //-------------------------------- message de validation ----------------------------//
+  else{
+    showAlert('Validation Passé avec succée');
+    setTimeout( () => {
+      document.querySelector('.alert').innerHTML = '';
+    },2000);
+    NomInp.value = '';
+    PassInp.value = '';
+  }
+  
 })
 
 
@@ -46,5 +75,10 @@ annuler.addEventListener('click' , (e) => {
 
   location.reload();
 })
+
+//--------------------- alert --------------------------------//
+function showAlert(message){
+  document.querySelector('.alert').innerHTML = message ;
+}
 
       
