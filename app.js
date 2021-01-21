@@ -24,7 +24,7 @@ submit.addEventListener('click', (e) => {
   e.preventDefault();
 
   const index = select.selectedIndex;
-  let reg = /^[a-zA-Z]+(\' \')?$/;
+  let reg = /^[a-zA-Z]+$/;
 
   //------------------- verifier si il existe une erreur ------------------------//
   if ( !reg.test(NomInp.value) || PassInp.value === '' || divIsHidden == false && select[index].text === 'Selectionner ville' )
